@@ -7,14 +7,10 @@
 		<hr>
 	</header>
  	{!! Form::open(['url' => 'cats']) !!}
- 		<div class="form-group">
-			{!! Form::label('title','Title:') !!}
-	 		{!! Form::text('title',null,['class' => 'form-control']) !!}
- 		</div>
- 		<div class="form-group">
-	 		{!! Form::submit('Add Category',['class' => 'btn btn-primary form-control']) !!}
- 		</div>
+            @include('categories.partials.form', ['submitButtonText' => 'Add Category'])
  	{!! Form::close() !!}
+        
+        @include('errors.list')
 	<footer></footer>
 </section> 
 @stop

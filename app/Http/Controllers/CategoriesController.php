@@ -3,13 +3,13 @@
 namespace App\Http\Controllers;
 
 //use Illuminate\Http\Request;
-use Request;
+//use Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Category;
-
+use App\Http\Requests\CategoryRequest;
 
 class CategoriesController extends Controller
 {
@@ -40,11 +40,13 @@ class CategoriesController extends Controller
      *
      * @return Response
      */
-    public function store()
+    public function store(CategoryRequest $request)
     {
-        $category = new Category;
 
-        $category->create(Request::all());
+        // validation
+        
+        
+        Category::create($request->all());
 
         return redirect('cats');
     }
@@ -81,11 +83,11 @@ class CategoriesController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function update($id)
+    public function update($id, CategoryRequest $request)
     {
         $category = Category::findOrFail($id);
 
-        $category->update(Request::all());
+        $category->update($request->all());
 
         return redirect('cats');
     }
