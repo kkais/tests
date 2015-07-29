@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/E:/KhurramK/environments/www/html/tests/resources/assets/sass/app.scss</file>
+            <file>file:/E:/KhurramK/environments/www/html/tests/app/Http/Controllers/Auth/AuthController.php</file>
+            <file>file:/E:/KhurramK/environments/www/html/tests/app/Http/Requests/CategoryRequest.php</file>
+            <file>file:/E:/KhurramK/environments/www/html/tests/app/Category.php</file>
+            <file>file:/E:/KhurramK/environments/www/html/tests/resources/views/categories/edit.blade.php</file>
+            <file>file:/E:/KhurramK/environments/www/html/tests/resources/views/errors/list.blade.php</file>
+            <file>file:/E:/KhurramK/environments/www/html/tests/resources/views/categories/partials/form.blade.php</file>
+            <file>file:/E:/KhurramK/environments/www/html/tests/resources/views/categories/create.blade.php</file>
+            <file>file:/E:/KhurramK/environments/www/html/tests/resources/lang/en/validation.php</file>
+            <file>file:/E:/KhurramK/environments/www/html/tests/config/auth.php</file>
+            <file>file:/E:/KhurramK/environments/www/html/tests/resources/lang/en/auth.php</file>
+            <file>file:/E:/KhurramK/environments/www/html/tests/resources/lang/en/passwords.php</file>
+            <file>file:/E:/KhurramK/environments/www/html/tests/resources/views/auth/register.blade.php</file>
+            <file>file:/E:/KhurramK/environments/www/html/tests/app/Http/Controllers/CategoriesController.php</file>
+            <file>file:/E:/KhurramK/environments/www/html/tests/app/Http/routes.php</file>
+            <file>file:/E:/KhurramK/environments/www/html/tests/resources/views/auth/login.blade.php</file>
+        </group>
     </open-files>
 </project-private>
