@@ -3,12 +3,13 @@
 @section('content')
 <article>
 	<head>
-		<h1>Categories</h1>
+		<h1>Quizzes</h1>
 		<hr>
 	</head>
 		<ul>
-			<li>{{ $category->title }}</li>
+			<li>{{ $quiz->title }}</li>
 		</ul>
 	<footer></footer>
 </article>
 @stop
+

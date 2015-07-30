@@ -6,26 +6,31 @@ use Illuminate\Database\Eloquent\Model;
 
 use Carbon\Carbon;
 
-class Category extends Model
+class Quiz extends Model
 {
     protected $fillable = ['title', 'published_at'];
-    protected $dates = ['published_at' ];
-    
+    protected $dates = ['published_at'];
+
     public function user() {
         
         return $this->belongsTo('App\User');
         
     }
     
-//    public function Quizes() {
+//    public function Category() {
 //        
-//        return $this->hasMany('App\Quiz');
+//        return $this->belongsTo('App\Category');
 //        
 //    }
-    
+//    
+//    public function Questions() {
+//        
+//        return $this->hasMany('App\Question');
+//    }
+
+
     public function setPublishedAtAttribute($date) {
         
-        //$this->attributes['published_at'] = Carbon::createFromFormat('Y-m-d', $date);
         $this->attributes['published_at'] = Carbon::parse($date);
         
     }

@@ -2,24 +2,22 @@
 
 namespace App\Http\Controllers;
 
-//use Illuminate\Http\Request;
-//use Request;
+use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Auth;
-use App\Category;
-use App\Http\Requests\CategoryRequest;
+use App\Quiz;
+use App\Http\Requests\QuizRequest;
 
-class CategoriesController extends Controller
+class QuizzesController extends Controller
 {
     
     public function __construct() {
         $this->middleware('auth', ['except' => ['index','show']]);
     }
-
-
+    
     /**
      * Display a listing of the resource.
      *
@@ -27,9 +25,10 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        $categories = Category::latest('published_at')->published()->get();
-
-        return view('categories.index',compact('categories'));
+        
+        $quizzes = Quiz::latest()->published()->get();
+        
+        return view('quizzes.index',  compact('quizzes'));
     }
 
     /**
@@ -39,7 +38,7 @@ class CategoriesController extends Controller
      */
     public function create()
     {
-        return view('categories.create');
+        return View('quizzes.create');
     }
 
     /**
@@ -47,13 +46,9 @@ class CategoriesController extends Controller
      *
      * @return Response
      */
-    public function store(CategoryRequest $request)
+    public function store()
     {
-        // validation
-        $category = new Category($request->all());
-        Auth::user()->categories()->save($category);
-
-        return redirect('cats');
+        //
     }
 
     /**
@@ -64,9 +59,9 @@ class CategoriesController extends Controller
      */
     public function show($id)
     {
-        $category = Category::findOrFail($id);
-
-        return view('categories.show',compact('category'));
+        $quiz = Quiz::findOrFail($id);
+        
+        return View('quizzes.show',compact('quiz'));
     }
 
     /**
@@ -77,9 +72,9 @@ class CategoriesController extends Controller
      */
     public function edit($id)
     {
-        $category = Category::findOrFail($id);
-
-        return view('categories.edit',compact('category'));
+        $quiz = Quiz::findOrFail($id);
+        
+        return View('quizzes.edit',compact('quiz'));
     }
 
     /**
@@ -88,13 +83,9 @@ class CategoriesController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function update($id, CategoryRequest $request)
+    public function update($id)
     {
-        $category = Category::findOrFail($id);
-
-        $category->update($request->all());
-
-        return redirect('cats');
+        //
     }
 
     /**
