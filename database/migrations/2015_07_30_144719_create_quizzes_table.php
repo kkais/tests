@@ -16,14 +16,8 @@ class CreateQuizzesTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->timestamp('published_at');
-            $table->integer('user_id')->unsigned();
             $table->integer('category_id')->unsigned();
             $table->timestamps();
-            
-            $table->foreign('user_id')
-                    ->references('id')
-                    ->on('users')
-                    ->onDelete('cascade');
             
             $table->foreign('category_id')
                     ->references('id')

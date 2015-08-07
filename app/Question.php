@@ -18,17 +18,17 @@ class Question extends Model
         
     }
     
-//    public function Quiz() {
-//        
-//        return $this->belongsTo('App\Quiz');
-//        
-//    }
-//    
-//    public function Answers() {
-//        
-//        return $this->hasMany('App\Answer');
-//        
-//    }
+    public function Quiz() {
+        
+        return $this->belongsTo('App\Quiz');
+        
+    }
+    
+    public function Answers() {
+        
+        return $this->hasMany('App\Answer');
+        
+    }
     
     public function setPublishedAtAttribute($date) {
         

@@ -10,5 +10,10 @@
 </div>
 
 <div class="form-group">
+    {!! Form::label('cat_list','Category:') !!}
+    {!! Form::select('cat_list', $cats, null, ['id' => 'cat_list', 'class' => 'form-control']) !!}
+</div>
+
+<div class="form-group">
     {!! Form::submit($submitButtonText, ['class' => 'btn btn-primary form-control']) !!}
 </div>

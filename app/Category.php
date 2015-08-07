@@ -29,11 +29,11 @@ class Category extends Model
         
     }
     
-//    public function Quizes() {
-//        
-//        return $this->hasMany('App\Quiz');
-//        
-//    }
+    public function Quizzes() {
+        
+        return $this->hasMany('App\Quiz');
+        
+    }
     
     public function setPublishedAtAttribute($date) {
         

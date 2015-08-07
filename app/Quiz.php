@@ -8,7 +8,7 @@ use Carbon\Carbon;
 
 class Quiz extends Model
 {
-    protected $fillable = ['title', 'published_at'];
+    protected $fillable = ['title', 'published_at', 'category_id'];
     protected $dates = ['published_at'];
 
     public function user() {
@@ -17,21 +17,27 @@ class Quiz extends Model
         
     }
     
-//    public function Category() {
-//        
-//        return $this->belongsTo('App\Category');
-//        
-//    }
-//    
-//    public function Questions() {
-//        
-//        return $this->hasMany('App\Question');
-//    }
+    public function category() {
+        
+        return $this->belongsTo('App\Category');
+        
+    }
+    
+    public function questions() {
+        
+        return $this->hasMany('App\Question');
+    }
 
 
     public function setPublishedAtAttribute($date) {
         
         $this->attributes['published_at'] = Carbon::parse($date);
+        
+    }
+    
+    public function getCatListAttribute() {
+        
+        return $this->category_id;
         
     }
     

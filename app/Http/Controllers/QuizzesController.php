@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 
 use Auth;
 use App\Quiz;
+use App\Category;
 use App\Http\Requests\QuizRequest;
 
 class QuizzesController extends Controller
@@ -38,7 +39,8 @@ class QuizzesController extends Controller
      */
     public function create()
     {
-        return View('quizzes.create');
+        $cats = Category::latest('published_at')->published()->lists('title','id');
+        return View('quizzes.create', compact('cats'));
     }
 
     /**
@@ -46,9 +48,15 @@ class QuizzesController extends Controller
      *
      * @return Response
      */
-    public function store()
+    public function store(QuizRequest $request)
     {
-        //
+        
+        $cat = Category::findOrFail($request->input('cat_list'));
+        $quiz = $cat->quizzes()->create($request->all());
+        
+        flash()->success('New Quiz has been created!');
+        
+        return redirect('quizzes');
     }
 
     /**
@@ -73,8 +81,8 @@ class QuizzesController extends Controller
     public function edit($id)
     {
         $quiz = Quiz::findOrFail($id);
-        
-        return View('quizzes.edit',compact('quiz'));
+        $cats = Category::latest('published_at')->published()->lists('title','id');
+        return View('quizzes.edit',compact('quiz','cats'));
     }
 
     /**
@@ -83,9 +91,17 @@ class QuizzesController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function update($id)
+    public function update($id, QuizRequest $request)
     {
-        //
+        
+        $quiz = Quiz::findOrFail($id);
+        $quiz->category_id = $request->input('cat_list');
+        $quiz->update($request->all());
+        
+        flash()->success('New Quiz has been updated!');
+        
+        return redirect('quizzes');
+        
     }
 
     /**
