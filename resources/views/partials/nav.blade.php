@@ -19,13 +19,34 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categories <span class="caret"></span></a>
           <ul class="dropdown-menu">
-			<li><a href="{{ url('/cats') }}">List All</a></li>
+            <li><a href="{{ url('/cats') }}">List All</a></li>
             <li><a href="{{ url('/cats/create') }}">Add New</a></li>
             <li><a href="#">Something else here</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="#">Separated link</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Quizzes <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="{{ url('/quizzes') }}">List All</a></li>
+            <li><a href="{{ url('/quizzes/create') }}">Add New</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Questions <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="{{ url('/questions') }}">List All</a></li>
+            <li><a href="{{ url('/questions/create') }}">Add New</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Answers <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="{{ url('/answers') }}">List All</a></li>
+            <li><a href="{{ url('/answers/create') }}">Add New</a></li>
           </ul>
         </li>
       </ul>

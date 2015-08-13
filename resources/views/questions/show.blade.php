@@ -2,13 +2,14 @@
 
 @section('content')
 <article>
-	<head>
-		<h1>Questions</h1>
-		<hr>
-	</head>
-		<ul>
-			<li>{{ $question->title }}</li>
-		</ul>
-	<footer></footer>
+    <head>
+        <h1>Question: {{ $question->title }}</h1>
+        <hr>
+    </head>
+    <footer></footer>
 </article>
+<ul>
+    <li>Quiz: {!! link_to("quizzes/{$question->quiz->id}",$question->quiz->title) !!}</li>
+</ul>
+
 @stop

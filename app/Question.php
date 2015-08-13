@@ -8,7 +8,7 @@ use Carbon\Carbon;
 
 class Question extends Model
 {
-    protected $fillable = ['title', 'published_at'];
+    protected $fillable = ['title', 'published_at', 'quiz_id'];
     protected $dates = ['published_at'];
 
 
@@ -18,13 +18,13 @@ class Question extends Model
         
     }
     
-    public function Quiz() {
+    public function quiz() {
         
         return $this->belongsTo('App\Quiz');
         
     }
     
-    public function Answers() {
+    public function answers() {
         
         return $this->hasMany('App\Answer');
         

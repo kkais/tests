@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use App\Quiz;
+use App\Question;
+use App\Http\Requests\QuestionRequest;
+
 class QuestionsController extends Controller
 {
     
@@ -21,7 +25,8 @@ class QuestionsController extends Controller
      */
     public function index()
     {
-        //
+        $questions = Question::latest('published_at')->published()->get();
+        return view('questions.index',compact('questions'));
     }
 
     /**
@@ -31,7 +36,8 @@ class QuestionsController extends Controller
      */
     public function create()
     {
-        //
+        $quizzes = Quiz::lists('title','id');
+        return view('questions.create',compact('quizzes'));
     }
 
     /**
@@ -39,9 +45,15 @@ class QuestionsController extends Controller
      *
      * @return Response
      */
-    public function store()
+    public function store(QuestionRequest $request)
     {
-        //
+        $quiz = Quiz::findOrfail($request->input('quiz_list'));
+        $question = $quiz->questions()->create($request->all());
+        
+        flash()->success('New Question has been created!');
+        
+        return redirect('questions');
+        
     }
 
     /**
@@ -52,7 +64,9 @@ class QuestionsController extends Controller
      */
     public function show($id)
     {
-        //
+        $question = Question::findOrFail($id);
+        
+        return view('questions.show',compact('question'));
     }
 
     /**

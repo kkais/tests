@@ -10,5 +10,10 @@
 </div>
 
 <div class="form-group">
+    {!! Form::label('quiz_list','Quiz:') !!}
+    {!! Form::select('quiz_list', $quizzes, null, ['id' => 'quiz_list', 'class' => 'form-control']) !!}
+</div>
+
+<div class="form-group">
     {!! Form::submit($submitButtonText, ['class' => 'btn btn-primary form-control']) !!}
 </div>

@@ -25,7 +25,7 @@ class QuizRequest extends Request
     {
         return [
             'title' => 'required|min:3',
-            'cat_list' => 'required',
+            'cat_list' => 'required|integer',
             'published_at' => 'required|date'
         ];
     }

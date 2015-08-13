@@ -29,7 +29,7 @@ class Category extends Model
         
     }
     
-    public function Quizzes() {
+    public function quizzes() {
         
         return $this->hasMany('App\Quiz');
         
